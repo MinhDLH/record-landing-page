@@ -1,0 +1,310 @@
+/* ==========================================================================
+   RÈCỌRD MEDIA AGENCY - LIGHT STUDIO DESIGN SYSTEM
+   Inspired by Apple, Framer & Stripe Light Creative Agency
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* Light Theme Colors */
+  --bg-canvas: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  
+  --primary-blue: #2563eb;
+  --primary-blue-hover: #1d4ed8;
+  --primary-blue-glow: rgba(37, 99, 235, 0.25);
+  --electric-blue: #1e40af;
+  --neon-cyan: #0284c7;
+  --chameleon-gradient: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #6366f1 100%);
+
+  --border-light: #e2e8f0;
+  --border-light-hover: #93c5fd;
+  --text-main: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --text-dim: #94a3b8;
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  border: 2px solid #f1f5f9;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* Glow Background Orbs - Soft Light Ambient */
+.orb-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.18;
+}
+
+.orb-blue {
+  background: radial-gradient(circle, #3b82f6 0%, rgba(59,130,246,0) 70%);
+}
+
+.orb-cyan {
+  background: radial-gradient(circle, #38bdf8 0%, rgba(56,189,248,0) 70%);
+}
+
+.orb-purple {
+  background: radial-gradient(circle, #818cf8 0%, rgba(129,140,248,0) 70%);
+}
+
+/* Clean Card Panel */
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  border-color: var(--border-light-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.08), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Gradient Text */
+.text-gradient {
+  background: var(--chameleon-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button Glow & Hover */
+.btn-glow {
+  position: relative;
+  background: #2563eb;
+  color: #ffffff;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.btn-glow:hover {
+  background: #1d4ed8;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent 30%, rgba(255, 255, 255, 0.25) 50%, transparent 70%);
+  transform: rotate(30deg);
+  transition: all 0.8s ease;
+  opacity: 0;
+}
+
+.btn-glow:hover::after {
+  opacity: 1;
+  transform: rotate(30deg) translate(50%, 50%);
+}
+
+/* Pulsing Badge Indicator */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  display: inline-block;
+  position: relative;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: #10b981;
+  animation: pulse-ring 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(2.4); opacity: 0; }
+  100% { transform: scale(0.95); opacity: 0; }
+}
+
+/* Chameleon Tag */
+.chameleon-tag {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+}
+
+/* Floating Animation */
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float-subtle 5s ease-in-out infinite;
+}
+
+/* Image Zoom on Card Hover */
+.zoom-img-container {
+  overflow: hidden;
+}
+.zoom-img-container img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.zoom-img-container:hover img {
+  transform: scale(1.08);
+}
+
+/* FAQ Accordion Transitions */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+.faq-item.active .faq-answer {
+  max-height: 250px;
+  opacity: 1;
+}
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  color: #2563eb;
+}
+
+.hero-headline {
+  line-height: 1.35 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 2.25rem !important;
+    line-height: 1.35 !important;
+  }
+}
+
+/* ==========================================================================
+   INTERACTIVE SERVICE DROPDOWN CARDS (BẢNG SỔ CHI TIẾT GÓI)
+   ========================================================================== */
+
+.service-card-interactive {
+  background: #ffffff;
+  border: 1.5px solid var(--border-light);
+  border-radius: 1.5rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: visible;
+}
+
+.service-card-interactive:hover,
+.service-card-interactive.is-open {
+  border-color: #3b82f6;
+  box-shadow: 0 20px 40px -12px rgba(37, 99, 235, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.04);
+  transform: translateY(-3px);
+}
+
+.service-chevron {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.service-card-interactive:hover .service-chevron,
+.service-card-interactive.is-open .service-chevron {
+  transform: rotate(180deg);
+  color: #2563eb;
+}
+
+/* Drop panel using modern CSS grid auto-height transition */
+.service-drop-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.service-drop-inner {
+  overflow: hidden;
+}
+
+/* Desktop hover & active open trigger */
+@media (hover: hover) and (min-width: 768px) {
+  .service-card-interactive:hover .service-drop-grid,
+  .service-card-interactive.is-open .service-drop-grid {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
+
+/* Mobile tap trigger or manual open */
+.service-card-interactive.is-open .service-drop-grid {
+  grid-template-rows: 1fr !important;
+  opacity: 1 !important;
+}
+
+/* Service Tab Pills */
+.service-tab-btn {
+  transition: all 0.25s ease;
+}
+.service-tab-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Addon Item Card */
+.addon-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  transition: all 0.25s ease;
+}
+.addon-card:hover {
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.08);
+}
