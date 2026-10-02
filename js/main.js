@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
       Swal.fire({
         icon: 'error',
         title: 'Số điện thoại không đúng!',
-        text: 'Số điện thoại phải gồm 10 chữ số (VD: 0949853015 hoặc 09xx xxx xxx).',
+        text: 'Số điện thoại phải gồm 10 chữ số (VD: 0362989385 hoặc 09xx xxx xxx).',
         confirmButtonColor: '#2563eb',
         confirmButtonText: 'Kiểm tra lại'
       }).then(() => {
@@ -432,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
           Swal.fire({
             icon: 'error',
             title: 'Có lỗi xảy ra!',
-            html: `Không thể kết nối đến Google Sheet (${error || 'Lỗi mạng'}). Vui lòng liên hệ trực tiếp Hotline/Zalo: <b>0949 853 015</b> để được hỗ trợ nhanh nhất.`,
+            html: `Không thể kết nối đến Google Sheet (${error || 'Lỗi mạng'}). Vui lòng liên hệ trực tiếp Hotline/Zalo: <b>0362 989 385</b> để được hỗ trợ nhanh nhất.`,
             confirmButtonColor: '#2563eb',
             confirmButtonText: 'Đã hiểu'
           });
