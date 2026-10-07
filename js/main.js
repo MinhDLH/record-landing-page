@@ -520,6 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightbox = document.getElementById('gallery-lightbox');
     if (lightbox) {
       lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
       void lightbox.offsetWidth; // trigger reflow
       lightbox.classList.remove('opacity-0');
       lightbox.classList.add('opacity-100');
@@ -538,6 +539,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lightbox.classList.add('opacity-0');
       setTimeout(() => {
         lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
         document.body.style.overflow = '';
       }, 300);
     }
