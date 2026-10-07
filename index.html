@@ -770,8 +770,8 @@
 
         <!-- Project 1: Workshop "Tô Túi Tạo Gu" -->
         <div
-          class="portfolio-item group glass-panel rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition duration-500 flex flex-col justify-between"
-          data-category="workshop event">
+          class="portfolio-item group glass-panel rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition duration-500 flex flex-col justify-between cursor-pointer"
+          data-category="workshop event" onclick="openGallery('to_tui')">
           <div>
             <div class="relative h-64 overflow-hidden zoom-img-container">
               <img src="assets/images/Tô túi tạo gu.jpg" alt="Sự kiện workshop Tô Túi Tạo Gu"
@@ -793,8 +793,8 @@
 
         <!-- Project 2: Workshop "Chạm Kim Sa" -->
         <div
-          class="portfolio-item group glass-panel rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition duration-500 flex flex-col justify-between"
-          data-category="workshop event">
+          class="portfolio-item group glass-panel rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition duration-500 flex flex-col justify-between cursor-pointer"
+          data-category="workshop event" onclick="openGallery('cham_kim_sa')">
           <div>
             <div class="relative h-64 overflow-hidden zoom-img-container">
               <img src="assets/images/chạm kim sa.jpg" alt="Workshop Chạm Kim Sa"
@@ -816,8 +816,8 @@
 
         <!-- Project 3: Tiệc Sinh Nhật Kỷ Niệm -->
         <div
-          class="portfolio-item group glass-panel rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition duration-500 flex flex-col justify-between"
-          data-category="birthday concept event">
+          class="portfolio-item group glass-panel rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition duration-500 flex flex-col justify-between cursor-pointer"
+          data-category="birthday concept event" onclick="openGallery('sinh_nhat')">
           <div>
             <div class="relative h-64 overflow-hidden zoom-img-container">
               <img src="assets/images/sinh nhật.jpg" alt="Concept Tiệc Sinh Nhật"
@@ -837,7 +837,28 @@
           </div>
         </div>
 
-
+        <!-- Project 4: Concept Trend Đính Đá -->
+        <div
+          class="portfolio-item group glass-panel rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition duration-500 flex flex-col justify-between cursor-pointer"
+          data-category="concept" onclick="openGallery('trend_dinh_da')">
+          <div>
+            <div class="relative h-64 overflow-hidden zoom-img-container">
+              <img src="assets/images/Trend Đính đá (6).jpg" alt="Concept Trend Đính Đá"
+                class="w-full h-full object-cover object-center" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-75 group-hover:opacity-40 transition">
+              </div>
+              <span
+                class="absolute top-3 right-3 text-[10px] font-bold bg-purple-600 text-white px-3 py-1 rounded-full shadow-md">
+                Concept Nghệ Thuật
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-heading text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Concept "Trend Đính Đá"</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">Bộ ảnh lấp lánh nghệ thuật đính đá, bắt kịp xu hướng makeup và ánh sáng sáng tạo nhất hiện nay. Click để xem trọn bộ.</p>
+            </div>
+          </div>
+        </div>
 
       </div>
 
@@ -1521,22 +1542,6 @@
           </div>
 
           <!-- Option 7 -->
-          <div class="addon-card p-4 flex flex-col justify-between cursor-pointer group" data-addon="Makeup Partner (Chiết khấu 20 - 30%)">
-            <div>
-              <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-                <span>Trang Điểm</span>
-                <i data-lucide="sparkles" class="w-4 h-4 text-pink-500"></i>
-              </div>
-              <h5 class="font-bold text-slate-900 text-sm group-hover:text-pink-600 transition">Makeup Partner</h5>
-              <p class="text-[11px] text-slate-500 mt-1">MUA chuyên nghiệp theo concept</p>
-            </div>
-            <div class="mt-4 pt-2 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-[11px] text-slate-400 group-hover:text-pink-600 transition">+ Chọn thêm</span>
-              <span class="font-black text-pink-600 text-xs">Chiết khấu 20 - 30%</span>
-            </div>
-          </div>
-
-          <!-- Option 8 -->
           <div class="addon-card p-4 flex flex-col justify-between cursor-pointer group" data-addon="Thuê váy / đạo cụ (Chiết khấu 15 - 20%)">
             <div>
               <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
@@ -1621,22 +1626,7 @@
         <div class="faq-item glass-panel rounded-2xl overflow-hidden">
           <button
             class="faq-question w-full p-6 text-left flex items-center justify-between gap-4 font-heading font-bold text-slate-900 text-base sm:text-lg hover:text-blue-600 transition">
-            <span>3. RÈCỌRD có hỗ trợ chuẩn bị trang phục và Makeup không?</span>
-            <i data-lucide="chevron-down"
-              class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300 flex-shrink-0"></i>
-          </button>
-          <div class="faq-answer px-6 pb-6 text-sm text-slate-600 leading-relaxed">
-            Có! Rècọrd có liên kết với các chuyên viên Makeup & Stylist chuyên trị phong cách trẻ Gen Z (Douyin, Tây,
-            Hàn Quốc, Vintage) với mức giá trợ giá cực mềm cho học sinh, sinh viên. Bạn chỉ cần báo trước khi đặt lịch
-            để ekip sắp xếp sẵn.
-          </div>
-        </div>
-
-        <!-- FAQ 4 -->
-        <div class="faq-item glass-panel rounded-2xl overflow-hidden">
-          <button
-            class="faq-question w-full p-6 text-left flex items-center justify-between gap-4 font-heading font-bold text-slate-900 text-base sm:text-lg hover:text-blue-600 transition">
-            <span>4. RÈCỌRD nhận quay chụp ở những khu vực nào?</span>
+            <span>3. RÈCỌRD nhận quay chụp ở những khu vực nào?</span>
             <i data-lucide="chevron-down"
               class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300 flex-shrink-0"></i>
           </button>
@@ -1647,11 +1637,11 @@
           </div>
         </div>
 
-        <!-- FAQ 5 -->
+        <!-- FAQ 4 -->
         <div class="faq-item glass-panel rounded-2xl overflow-hidden">
           <button
             class="faq-question w-full p-6 text-left flex items-center justify-between gap-4 font-heading font-bold text-slate-900 text-base sm:text-lg hover:text-blue-600 transition">
-            <span>5. Quy trình đặt cọc và thanh toán như thế nào?</span>
+            <span>4. Quy trình đặt cọc và thanh toán như thế nào?</span>
             <i data-lucide="chevron-down"
               class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300 flex-shrink-0"></i>
           </button>
@@ -1800,7 +1790,6 @@
                     <option value="BTS dựng đẹp 60s (+500.000 đ)">Video BTS dựng đẹp 60s (+500.000 đ)</option>
                     <option value="Trả ảnh trong 12h (+300.000 đ)">Trả ảnh hỏa tốc trong 12h (+300.000 đ)</option>
                     <option value="Chụp ngoại tỉnh (Thực tế + 200k)">Chụp ngoại tỉnh (Thực tế + 200k)</option>
-                    <option value="Makeup Partner (Chiết khấu 20 - 30%)">Makeup Partner (Chiết khấu 20 - 30%)</option>
                     <option value="Thuê váy / đạo cụ (Chiết khấu 15 - 20%)">Thuê váy / đạo cụ (Chiết khấu 15 - 20%)</option>
                     <option value="Nhiều dịch vụ phụ khác (trao đổi thêm)">Nhiều dịch vụ phụ khác (trao đổi thêm)</option>
                   </select>
@@ -1988,6 +1977,25 @@
 
   <!-- SweetAlert2 CDN (Thư viện Thông Báo Đẹp Mắt) -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Lightbox Modal -->
+  <div id="gallery-lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300">
+    <button onclick="closeGallery()" class="absolute top-5 right-5 text-white/70 hover:text-white z-10 transition">
+      <i data-lucide="x" class="w-10 h-10"></i>
+    </button>
+    <button onclick="prevImage()" class="absolute left-5 sm:left-10 top-1/2 -translate-y-1/2 text-white/70 hover:text-white z-10 transition">
+      <i data-lucide="chevron-left" class="w-12 h-12"></i>
+    </button>
+    <button onclick="nextImage()" class="absolute right-5 sm:right-10 top-1/2 -translate-y-1/2 text-white/70 hover:text-white z-10 transition">
+      <i data-lucide="chevron-right" class="w-12 h-12"></i>
+    </button>
+    <div class="w-full h-full px-12 sm:px-24 flex justify-center items-center">
+      <img id="gallery-image" src="" alt="Gallery Image" class="max-h-[85vh] max-w-full object-contain mx-auto rounded-lg shadow-2xl transition-all duration-300 transform scale-95 opacity-0" />
+    </div>
+    <div class="absolute bottom-6 left-0 right-0 text-center text-white/70 text-sm font-semibold tracking-widest">
+      <span id="gallery-counter">1 / 6</span>
+    </div>
+  </div>
 
   <!-- Custom Scripts -->
   <script src="js/main.js"></script>

@@ -482,4 +482,116 @@ document.addEventListener('DOMContentLoaded', () => {
       serviceSelect.value = defaultService;
     }
   };
+
+  // 10. Gallery Lightbox Functionality
+  const galleries = {
+    'trend_dinh_da': [
+      "assets/images/Trend Đính đá (6).jpg",
+      "assets/images/Trend Đính đá.jpg",
+      "assets/images/Trend Đính đá (2).jpg",
+      "assets/images/Trend Đính đá (3).jpg",
+      "assets/images/Trend Đính đá (4).jpg",
+      "assets/images/Trend Đính đá (5).jpg"
+    ],
+    'to_tui': [
+      "assets/images/Tô túi tạo gu.jpg"
+    ],
+    'cham_kim_sa': [
+      "assets/images/chạm kim sa.jpg"
+    ],
+    'sinh_nhat': [
+      "assets/images/sinh nhật.jpg",
+      "assets/images/sinh nhật(1).jpg",
+      "assets/images/sinh nhật (2).jpg",
+      "assets/images/sinh nhật (3).jpg",
+      "assets/images/sinh nhật (4).jpg"
+    ]
+  };
+
+  let currentGallery = [];
+  let currentImageIndex = 0;
+
+  window.openGallery = (galleryId) => {
+    currentGallery = galleries[galleryId] || [];
+    if (currentGallery.length === 0) return;
+    
+    currentImageIndex = 0;
+    updateGalleryImage();
+    const lightbox = document.getElementById('gallery-lightbox');
+    if (lightbox) {
+      lightbox.classList.remove('hidden');
+      void lightbox.offsetWidth; // trigger reflow
+      lightbox.classList.remove('opacity-0');
+      lightbox.classList.add('opacity-100');
+      document.body.style.overflow = 'hidden';
+      // Refresh lucide icons in lightbox if needed
+      if (window.lucide) {
+        window.lucide.createIcons({ root: lightbox });
+      }
+    }
+  };
+
+  window.closeGallery = () => {
+    const lightbox = document.getElementById('gallery-lightbox');
+    if (lightbox) {
+      lightbox.classList.remove('opacity-100');
+      lightbox.classList.add('opacity-0');
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+  };
+
+  window.prevImage = () => {
+    if (currentGallery.length <= 1) return;
+    currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
+    updateGalleryImage();
+  };
+
+  window.nextImage = () => {
+    if (currentGallery.length <= 1) return;
+    currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
+    updateGalleryImage();
+  };
+
+  function updateGalleryImage() {
+    const imgElement = document.getElementById('gallery-image');
+    const counterElement = document.getElementById('gallery-counter');
+    
+    if (imgElement && counterElement) {
+      imgElement.style.opacity = '0';
+      imgElement.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        imgElement.src = currentGallery[currentImageIndex];
+        imgElement.style.opacity = '1';
+        imgElement.style.transform = 'scale(1)';
+        
+        const prevBtn = document.querySelector('#gallery-lightbox button[onclick="prevImage()"]');
+        const nextBtn = document.querySelector('#gallery-lightbox button[onclick="nextImage()"]');
+        
+        if (currentGallery.length <= 1) {
+          counterElement.style.display = 'none';
+          if (prevBtn) prevBtn.style.display = 'none';
+          if (nextBtn) nextBtn.style.display = 'none';
+        } else {
+          counterElement.style.display = 'block';
+          counterElement.textContent = `${currentImageIndex + 1} / ${currentGallery.length}`;
+          if (prevBtn) prevBtn.style.display = 'block';
+          if (nextBtn) nextBtn.style.display = 'block';
+        }
+      }, 150);
+    }
+  }
+
+  // Keyboard navigation for gallery
+  document.addEventListener('keydown', (e) => {
+    const lightbox = document.getElementById('gallery-lightbox');
+    if (lightbox && !lightbox.classList.contains('hidden')) {
+      if (e.key === 'Escape') window.closeGallery();
+      if (e.key === 'ArrowLeft') window.prevImage();
+      if (e.key === 'ArrowRight') window.nextImage();
+    }
+  });
+
 });
