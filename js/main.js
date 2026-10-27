@@ -509,6 +509,11 @@ document.addEventListener('DOMContentLoaded', () => {
       "assets/co gai thien nhien/798800565_122124737961341710_3481277218238290336_n.jpg",
       "assets/co gai thien nhien/798800568_122124737973341710_6741003375734910904_n.jpg"
     ],
+    'ao_dai': [
+      "assets/ao dai/762331929_122118118767341710_7311901920997241212_n.jpg",
+      "assets/ao dai/762883279_122118118797341710_183812913336538834_n.jpg",
+      "assets/ao dai/762909543_122118118779341710_1759582642637976964_n.jpg"
+    ],
     'to_tui': [
       "assets/images/Tô túi tạo gu.jpg"
     ],
