@@ -491,7 +491,23 @@ document.addEventListener('DOMContentLoaded', () => {
       "assets/images/Trend Đính đá (2).jpg",
       "assets/images/Trend Đính đá (3).jpg",
       "assets/images/Trend Đính đá (4).jpg",
-      "assets/images/Trend Đính đá (5).jpg"
+      "assets/images/Trend Đính đá (5).jpg",
+      "assets/trend dinh da/831545364_122129359149341710_961377924884003662_n.jpg",
+      "assets/trend dinh da/832634803_122129358957341710_5956874462208577645_n.jpg",
+      "assets/trend dinh da/833165217_122129359107341710_6401734741101163491_n.jpg",
+      "assets/trend dinh da/833313908_122129359167341710_5858009974802881090_n.jpg",
+      "assets/trend dinh da/833326146_122129359065341710_6860380236365706475_n.jpg",
+      "assets/trend dinh da/833890604_122129359029341710_5878226606152028883_n.jpg",
+      "assets/trend dinh da/834191909_122129359017341710_4165758685109965635_n.jpg",
+      "assets/trend dinh da/835750266_122129359119341710_8931320376389235118_n.jpg",
+      "assets/trend dinh da/836333078_122129359077341710_7412982360601373483_n.jpg"
+    ],
+    'khoanh_khac_tu_nhien': [
+      "assets/co gai thien nhien/798119410_122124737937341710_6147218153125079498_n.jpg",
+      "assets/co gai thien nhien/798800566_122124737919341710_8219041564087991505_n.jpg",
+      "assets/co gai thien nhien/798800584_122124737949341710_2941696728815585801_n.jpg",
+      "assets/co gai thien nhien/798800565_122124737961341710_3481277218238290336_n.jpg",
+      "assets/co gai thien nhien/798800568_122124737973341710_6741003375734910904_n.jpg"
     ],
     'to_tui': [
       "assets/images/Tô túi tạo gu.jpg"
@@ -595,5 +611,31 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'ArrowRight') window.nextImage();
     }
   });
+
+  // 11. Video Showcase Sound Toggle & Autoplay Assurance
+  const showcaseVideo = document.getElementById('showcase-video');
+  if (showcaseVideo) {
+    showcaseVideo.muted = true;
+    showcaseVideo.play().catch(() => {});
+  }
+
+  window.toggleVideoSound = () => {
+    const video = document.getElementById('showcase-video');
+    const soundText = document.getElementById('sound-text');
+    const soundIcon = document.getElementById('sound-icon');
+    if (!video) return;
+
+    video.muted = !video.muted;
+    if (video.muted) {
+      if (soundText) soundText.textContent = 'Bật âm thanh';
+      if (soundIcon) soundIcon.setAttribute('data-lucide', 'volume-x');
+    } else {
+      if (soundText) soundText.textContent = 'Tắt âm thanh';
+      if (soundIcon) soundIcon.setAttribute('data-lucide', 'volume-2');
+    }
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  };
 
 });

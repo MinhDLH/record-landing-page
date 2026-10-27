@@ -763,10 +763,14 @@
           class="portfolio-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold transition border border-slate-200 bg-white text-slate-700 hover:text-blue-600 hover:border-blue-300">
           Concept Nghệ Thuật
         </button>
+        <button data-filter="outdoor"
+          class="portfolio-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold transition border border-slate-200 bg-white text-slate-700 hover:text-blue-600 hover:border-blue-300">
+          Ngoại Cảnh Tự Nhiên
+        </button>
       </div>
 
-      <!-- Projects Grid (4 Real Projects) -->
-      <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Projects Grid (5 Real Projects) -->
+      <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Project 1: Workshop "Tô Túi Tạo Gu" -->
         <div
@@ -860,6 +864,41 @@
           </div>
         </div>
 
+        <!-- Project 5: Không Cần Concept Quá Cầu Kỳ -->
+        <div
+          class="portfolio-item group glass-panel rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition duration-500 flex flex-col justify-between cursor-pointer"
+          data-category="concept outdoor" onclick="openGallery('khoanh_khac_tu_nhien')">
+          <div>
+            <div class="relative h-64 overflow-hidden zoom-img-container">
+              <img src="assets/co gai thien nhien/798119410_122124737937341710_6147218153125079498_n.jpg" alt="Không Cần Concept Quá Cầu Kỳ"
+                class="w-full h-full object-cover object-center" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-75 group-hover:opacity-40 transition">
+              </div>
+              <span
+                class="absolute top-3 right-3 text-[10px] font-bold bg-emerald-600 text-white px-3 py-1 rounded-full shadow-md">
+                Ngoại Cảnh & Cảm Xúc
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-heading text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Không Cần Concept Quá Cầu Kỳ</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">Đôi khi, chính những khoảnh khắc tự nhiên lại tạo nên những bức ảnh đẹp và giàu cảm xúc nhất.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           VIDEO SHOWCASE (TỰ ĐỘNG PHÁT TẮT TIẾNG)
+           ===================================================================== -->
+      <div class="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-slate-200/80">
+        <div class="relative max-w-4xl mx-auto rounded-3xl overflow-hidden bg-slate-950 shadow-2xl border border-slate-800/80">
+          <video id="showcase-video" autoplay loop muted playsinline controls
+            class="w-full max-h-[640px] object-contain mx-auto bg-black" src="assets/video.mp4">
+            Trình duyệt của bạn không hỗ trợ định dạng video này.
+          </video>
+        </div>
       </div>
 
     </div>
@@ -1998,7 +2037,7 @@
   </div>
 
   <!-- Custom Scripts -->
-  <script src="js/main.js?v=2.1"></script>
+  <script src="js/main.js?v=2.5"></script>
 </body>
 
 </html>
